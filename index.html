@@ -3,26 +3,191 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Portafolio QA - Juan David Arias</title>
+
+    <title>Juan David Arias | QA Engineer</title>
+    <meta name="description"
+          content = "Portafolio profesional de Juan David Arias, QA Engineer. 
+          Proyectos de pruebas de software y automatización.">  
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap"
+          rel="stylesheet">
+
+    <link rel="stylesheet" href="styles.css">
 </head>
+
 <body>
-    <header>
-        <h1>Juan David Arias</h1>
-        <h2>QA Engineer</h2>
-        <p>Bienvenido a mi portafolio de proyectos</p>
+    <header class="hero">
+        <nav class="navbar"
+            <a class="logo" href="#inicio">JDA<span>.</span></a>
+
+            <div class="nav-links">
+                <a href="#sobre-mi">Sobre mí</a>
+                <a href="#proyectos">Proyectos</a>
+                <a href="#contacto">Contacto</a>
+            </div>
+        </nav>
+
+        <div class="hero-content" id="inicio">
+            <p class="eyebrow">PORTAFOLIO PROFESIONAL</p>
+
+            <h1>Juan David Arias</h1>
+
+            <h2>QA Engineer</h2>
+
+            <p class="hero-description">
+                Me interesa construir software confiable mediante
+                pruebas rigurosas, análisis de requisitos y
+                automatización de procesos.
+            </p>
+
+            <a class="button button-primary" href="#proyectos">
+                Explorar proyectos <span aria-hidden="true">↘</span>
+            </a>
+        </div>
     </header>
 
     <main>
-        <section>
+        <section class="section about" id="sobre-mi">
+            <p class="eyebrow">PERFIL PROFESIONAL</p>
             <h2>Sobre mí</h2>
-            <p>Aquí presentaré mi perfil profesional y mis habilidades.</p>
+
+             <p class="section-description">
+                Soy un profesional orientado al análisis, la resolución
+                de problemas y la mejora continua. Estoy desarrollando
+                mis habilidades en aseguramiento de la calidad del
+                software, diseño de pruebas y automatización.
+            </p>
+
+            <div class="skills">
+                <span>Python</span>
+                <span>Selenium</span>
+                <span>pytest</span>
+                <span>API Testing</span>
+                <span>SQL</span>
+                <span>Git</span>
+            </div>
         </section>
 
-        <section>
+        <section class="section projects" id="proyectos">
+            <p class="eyebrow">TRABAJO DESTACADO</p>
             <h2>Mis proyectos</h2>
-            <p>Próximamente encontrarás aquí mis proyectos de pruebas de 
-                software.</p>
+
+            <p class="section-description">
+                Una selección de ejercicios y proyectos de pruebas
+                de software que documentan mi aprendizaje.
+            </p>
+
+            <div class="project-grid">
+                <article class="project-card">
+                    <div class="project-number">01 / AUTOMATIZACIÓN</div>
+                    <h3>Pruebas web con Selenium</h3>
+
+                    <p>
+                        Automatización de interacciones con una
+                        aplicación web y validación de sus elementos
+                        mediante Python y Selenium WebDriver.
+                    </p>
+
+                    <div class="project-tags">
+                        <span>Python</span>
+                        <span>Selenium</span>
+                        <span>pytest</span>
+                    </div>
+
+                    <a class="project-link"
+                       href="https://github.com/juandavidaf"
+                       target="_blank"
+                       rel="noopener noreferrer">
+                        Ver en GitHub <span aria-hidden="true">↗</span>
+                    </a>
+                </article>
+
+                <article class="project-card">
+                    <div class="project-number">02 / PRUEBAS DE API</div>
+                    <h3>Validación de servicios API</h3>
+
+                    <p>
+                        Pruebas de endpoints, códigos de estado HTTP,
+                        datos de respuesta y comportamiento ante
+                        solicitudes válidas e inválidas.
+                    </p>
+
+                    <div class="project-tags">
+                        <span>Python</span>
+                        <span>API</span>
+                        <span>pytest</span>
+                    </div>
+
+                    <a class="project-link"
+                       href="https://github.com/juandavidaf"
+                       target="_blank"
+                       rel="noopener noreferrer">
+                        Ver en GitHub <span aria-hidden="true">↗</span>
+                    </a>
+                </article>
+
+                <article class="project-card">
+                    <div class="project-number">03 / DISEÑO DE PRUEBAS</div>
+                    <h3>Análisis y diseño de casos</h3>
+
+                    <p>
+                        Diseño de escenarios de prueba a partir de
+                        requisitos, particiones de equivalencia,
+                        valores límite y documentación de defectos.
+                    </p>
+
+                    <div class="project-tags">
+                        <span>Test Design</span>
+                        <span>QA</span>
+                        <span>Bug Reports</span>
+                    </div>
+
+                    <a class="project-link"
+                       href="https://github.com/juandavidaf"
+                       target="_blank"
+                       rel="noopener noreferrer">
+                        Ver en GitHub <span aria-hidden="true">↗</span>
+                    </a>
+                </article>
+            </div>
+        </section>
+
+        <section class="section contact" id="contacto">
+            <p class="eyebrow">HABLEMOS</p>
+            <h2>¿Trabajamos juntos?</h2>
+
+            <p class="section-description">
+                Estoy interesado en oportunidades profesionales
+                relacionadas con QA y pruebas de software.
+                Si deseas conocer más sobre mi perfil, puedes
+                contactarme a través de los siguientes canales.
+            </p>
+
+            <div class="contact-links">
+                <a href="mailto:juandavidaf2002@gmail.com">
+                    Correo electrónico <span aria-hidden="true">↗</span>
+                </a>
+
+                <a href="https://www.linkedin.com/in/juan-david-arias-frontanilla/"
+                   target="_blank"
+                   rel="noopener noreferrer">
+                    LinkedIn <span aria-hidden="true">↗</span>
+                </a>
+
+                <a href="https://github.com/juandavidaf"
+                   target="_blank"
+                   rel="noopener noreferrer">
+                    GitHub <span aria-hidden="true">↗</span>
+                </a>
+            </div>
         </section>
     </main>
+
+    <footer class="footer">
+        <p>© 2026 Juan David Arias · Portafolio QA</p>
+    </footer>
+
 </body> 
 </html>
