@@ -75,19 +75,9 @@ a:focus-visible {
     gap: 24px;
 }
 
-.logo {
-    font-size: 1.5rem;
-    font-weight: 800;
-    letter-spacing: -1px;
-}
-
-.logo span {
-    color: var(--accent-light);
-}
-
 .nav-links {
     display: flex;
-    gap: 28px;
+    gap: 40px;
     flex-wrap: wrap;
 }
 
@@ -105,6 +95,133 @@ a:focus-visible {
     max-width: 1100px;
     margin: 0 auto;
     padding: 105px 28px 115px;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 70px;
+}
+
+.hero-text {
+    flex: 1;
+    max-width: 620px;
+}
+
+.qa-wheel{
+    position: relative;
+    width: 300px;
+    height: 300px;
+    flex-shrink: 0;
+}
+
+.qa-wheel-svg{
+    width: 100%;
+    height: 100%;
+    overflow: visible;
+}
+
+.qa-ring {
+    fill: none;
+    stroke: #ffffff;
+    stroke-width: 10;
+}
+
+.qa-divider {
+    stroke: #ffffff;
+    stroke-width: 10;
+    stroke-linecap: butt;
+}
+
+.qa-center {
+    fill: var(--background);
+    stroke: #ffffff;
+    stroke-width: 5;
+}
+
+.qa-label {
+    position: absolute;
+
+    color: #ffffff;
+
+    font-size: 0.78rem;
+    font-weight: 700;
+
+    text-transform: uppercase;
+    letter-spacing: 1px;
+
+    pointer-events: none;
+}
+
+.qa-label-quality {
+    top: 48px;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.qa-label-automation {
+    top: 50%;
+    right: 18px;
+    transform: translateY(-50%);
+}
+
+.qa-label-improvement {
+    bottom: 48px;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.qa-label-collaboration {
+    top: 50%;
+    left: 18px;
+    transform: translateY(-50%);
+}
+
+.qa-hitarea {
+    fill: transparent;
+    stroke: none;
+    cursor: pointer;
+}
+
+.qa-hitarea:hover {
+    fill: rgba(255, 255, 255, 0.08);
+}
+
+.qa-quality{
+    clip-path: polygon(
+        50% 50%
+        0% 0%
+        100% 0%
+    );
+}
+
+.qa-automation {
+    clip-path: polygon(
+        50% 50%,
+        100% 0%,
+        100% 100%
+    );
+}
+
+.qa-improvement {
+    clip-path: polygon(
+        50% 50%,
+        100% 100%,
+        0% 100%
+    );
+}
+
+.qa-collaboration {
+    clip-path: polygon(
+        50% 50%,
+        0% 100%,
+        0% 0%
+    );
+}
+
+.qa-center {
+    fill: var(--background);
+    stroke: #ffffff;
+    stroke-width: 5;
 }
 
 .eyebrow {
@@ -131,7 +248,7 @@ a:focus-visible {
 
 .hero-description {
     color: var(--muted);
-    max-width: 620px;
+    max-width: 420px;
     margin: 0 0 30px;
 }
 
@@ -231,6 +348,7 @@ a:focus-visible {
 }
 
 .project-card {
+    cursor: pointer;
     display: flex;
     flex-direction: column;
     align-items: flex-start;
@@ -434,5 +552,148 @@ a:focus-visible {
     .project-card:hover,
     .button-primary:hover {
         transform: none;
+    }
+}
+
+/* =========================
+   11. MODAL DE PROYECTOS
+   ========================= */
+
+/* Fondo oscuro que cubre la página */
+.project-modal {
+    display: none;
+    position: fixed;
+    inset: 0;
+    z-index: 1000;
+
+    align-items: center;
+    justify-content: center;
+
+    padding: 24px;
+    background: rgba(0, 0, 0, 0.72);
+    backdrop-filter: blur(5px);
+}
+
+/* Estado visible de la ventana */
+.project-modal.is-open {
+    display: flex;
+}
+
+/* Contenedor central */
+.project-modal-content {
+    position: relative;
+    width: 100%;
+    max-width: 650px;
+    max-height: 85vh;
+    overflow-y: auto;
+
+    padding: 38px;
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 18px;
+
+    box-shadow: 0 24px 70px rgba(0, 0, 0, 0.4);
+
+    animation: modal-appear 0.22s ease;
+}
+
+/* Botón de cierre */
+.project-modal-close {
+    position: absolute;
+    top: 14px;
+    right: 18px;
+
+    width: 36px;
+    height: 36px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    color: var(--muted);
+    background: transparent;
+    border: none;
+    border-radius: 8px;
+
+    font-size: 2rem;
+    cursor: pointer;
+    transition: color 0.2s ease,
+                background-color 0.2s ease;
+}
+
+.project-modal-close:hover {
+    color: var(--accent-light);
+    background: var(--surface-hover);
+}
+
+/* Título y descripción */
+.project-modal-content h2 {
+    margin: 18px 0 14px;
+    font-size: 1.7rem;
+    line-height: 1.3;
+}
+
+.project-modal-content > p {
+    color: var(--muted);
+    line-height: 1.7;
+}
+
+.project-modal-content h3 {
+    margin-top: 28px;
+    margin-bottom: 12px;
+    font-size: 1rem;
+}
+
+.project-modal-content ul {
+    padding-left: 22px;
+    color: var(--muted);
+    line-height: 1.8;
+}
+
+.project-modal-content li {
+    margin-bottom: 8px;
+}
+
+/* Etiquetas de tecnologías */
+.project-modal-content .project-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin-top: 24px;
+}
+
+.project-modal-content .project-tags span {
+    padding: 5px 10px;
+    font-size: 0.78rem;
+    border: 1px solid var(--border);
+    border-radius: 6px;
+}
+
+/* Aparición suave */
+@keyframes modal-appear {
+    from {
+        opacity: 0;
+        transform: translateY(12px) scale(0.98);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0) scale(1);
+    }
+}
+
+/* Adaptación a pantallas pequeñas */
+@media (max-width: 600px) {
+    .project-modal {
+        padding: 14px;
+    }
+
+    .project-modal-content {
+        padding: 30px 22px;
+        max-height: 90vh;
+    }
+
+    .project-modal-content h2 {
+        font-size: 1.4rem;
     }
 }

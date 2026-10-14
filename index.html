@@ -20,7 +20,7 @@
 <body>
     <header class="hero">
         <nav class="navbar"
-            <a class="logo" href="#inicio">JDA<span>.</span></a>
+            <a href="#inicio"><span></span></a>
 
             <div class="nav-links">
                 <a href="#sobre-mi">Sobre mí</a>
@@ -30,21 +30,139 @@
         </nav>
 
         <div class="hero-content" id="inicio">
-            <p class="eyebrow">PORTAFOLIO PROFESIONAL</p>
+            <div class="hero-text">
+                <p class="eyebrow">PORTAFOLIO PROFESIONAL</p>
 
-            <h1>Juan David Arias</h1>
+                <h1>Juan David Arias</h1>
 
-            <h2>QA Engineer</h2>
+                <h2>QA Engineer</h2>
 
-            <p class="hero-description">
+                <p class="hero-description">
                 Me interesa construir software confiable mediante
                 pruebas rigurosas, análisis de requisitos y
                 automatización de procesos.
-            </p>
+                </p>
 
-            <a class="button button-primary" href="#proyectos">
+                <a class="button button-primary" href="#proyectos">
                 Explorar proyectos <span aria-hidden="true">↘</span>
-            </a>
+                </a>
+            </div>
+
+            <div class="qa-wheel">
+
+                <svg
+                    class="qa-wheel-svg"
+                    viewBox="0 0 400 400"
+                    aria-label="Principios de QA Engineering">
+
+                    <!-- Anillo exterior -->
+                    <circle
+                        class="qa-ring"
+                        cx="200"
+                        cy="200"
+                        r="190">
+                    </circle>
+
+                    <!-- Divisiones diagonales -->
+                    <line
+                        class="qa-divider"
+                        x1="65.65"
+                        y1="65.65"
+                        x2="146.97"
+                        y2="146.97">
+                    </line>
+
+                    <line
+                        class="qa-divider"
+                        x1="334.35"
+                        y1="65.65"
+                        x2="253.03"
+                        y2="146.97">
+                    </line>
+
+                    <line
+                        class="qa-divider"
+                        x1="334.35"
+                        y1="334.35"
+                        x2="253.03"
+                        y2="253.03">
+                    </line>
+
+                    <line
+                        class="qa-divider"
+                        x1="65.65"
+                        y1="334.35"
+                        x2="146.97"
+                        y2="253.03">
+                    </line>
+
+                    <!-- Círculo central -->
+                    <circle
+                        class="qa-center"
+                        cx="200"
+                        cy="200"
+                        r="75">
+                    </circle>
+                    <!-- Zonas interactivas -->
+                    <path
+                        class="qa-hitarea"
+                        data-principle="quality"
+                        d="M 65.65 65.65
+                        A 190 190 0 0 1 334.35 65.65
+                        L 253.03 146.97
+                        A 75 75 0 0 0 146.97 146.97
+                        Z">
+                    </path>
+
+                    <path
+                        class="qa-hitarea"
+                        data-principle="automation"
+                        d="M 334.35 65.65
+                        A 190 190 0 0 1 334.35 334.35
+                        L 253.03 253.03
+                        A 75 75 0 0 0 253.03 146.97
+                        Z">
+                    </path>
+
+                    <path
+                        class="qa-hitarea"
+                        data-principle="improvement"
+                        d="M 334.35 334.35
+                        A 190 190 0 0 1 65.65 334.35
+                        L 146.97 253.03
+                        A 75 75 0 0 0 253.03 253.03
+                        Z">
+                    </path>
+
+                    <path
+                        class="qa-hitarea"
+                        data-principle="collaboration"
+                        d="M 65.65 334.35
+                        A 190 190 0 0 1 65.65 65.65
+                        L 146.97 146.97
+                        A 75 75 0 0 0 146.97 253.03
+                        Z">
+                    </path>
+                </svg>
+
+                <div class="qa-label qa-label-quality">
+                    <span>Calidad</span>
+                </div>
+
+                <div class="qa-label qa-label-automation">
+                    <span>Automatización</span>
+                </div>
+
+                <div class="qa-label qa-label-improvement">
+                    <span>Mejora continua</span>
+                </div>
+
+                <div class="qa-label qa-label-collaboration">
+                    <span>Colaboración</span>
+                </div>
+
+            </div>
+            
         </div>
     </header>
 
@@ -152,6 +270,42 @@
                     </a>
                 </article>
             </div>
+
+            <!-- Ventana modal de los proyectos -->
+            <div class="project-modal" id="project-modal" aria-hidden="true">
+                <div class="project-modal-content"
+                    role="dialog"
+                    aria-modal="true"
+                    aria-labelledby="modal-title">
+
+                    <button class="project-modal-close"
+                            id="modal-close"
+                            type="button"
+                            aria-label="Cerrar ventana">
+                        &times;
+                    </button>
+
+                    <div class="project-number" id="modal-category"></div>
+
+                    <h2 id="modal-title"></h2>
+
+                    <p id="modal-description"></p>
+
+                    <h3>Detalles del proyecto</h3>
+                    <ul id="modal-details"></ul>
+
+                    <div class="project-tags" id="modal-tags"></div>
+
+                    <a class="project-link"
+                    id="modal-github"
+                    href="https://github.com/juandavidaf"
+                    target="_blank"
+                    rel="noopener noreferrer">
+                        Ver en GitHub <span aria-hidden="true">↗</span>
+                    </a>
+                </div>
+            </div>
+
         </section>
 
         <section class="section contact" id="contacto">
@@ -189,5 +343,6 @@
         <p>© 2026 Juan David Arias · Portafolio QA</p>
     </footer>
 
+<script src="script.js" defer></script>
 </body> 
 </html>
