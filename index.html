@@ -55,46 +55,61 @@
                     viewBox="0 0 400 400"
                     aria-label="Principios de QA Engineering">
 
-                    <!-- Anillo exterior -->
-                    <circle
-                        class="qa-ring"
-                        cx="200"
-                        cy="200"
-                        r="190">
-                    </circle>
+                    <!-- Pieza: Calidad -->
+                    <g class="qa-piece qa-piece-quality">
+                        <path
+                            class="qa-piece-ring"
+                            d="
+                                M 65.65 65.65
+                                A 190 190 0 0 1 334.35 65.65
+                                L 253.03 146.97
+                                A 75 75 0 0 0 146.97 146.97
+                                Z
+                            ">
+                        </path>
+                    </g>
 
-                    <!-- Divisiones diagonales -->
-                    <line
-                        class="qa-divider"
-                        x1="65.65"
-                        y1="65.65"
-                        x2="146.97"
-                        y2="146.97">
-                    </line>
+                    <!-- Pieza: Automatización -->
+                    <g class="qa-piece qa-piece-automation">
+                        <path
+                            class="qa-piece-ring"
+                            d="
+                                M 334.35 65.65
+                                A 190 190 0 0 1 334.35 334.35
+                                L 253.03 253.03
+                                A 75 75 0 0 0 253.03 146.97
+                                Z
+                            ">
+                        </path>
+                    </g>
 
-                    <line
-                        class="qa-divider"
-                        x1="334.35"
-                        y1="65.65"
-                        x2="253.03"
-                        y2="146.97">
-                    </line>
+                    <!-- Pieza: Mejora continua -->
+                    <g class="qa-piece qa-piece-improvement">
+                        <path
+                            class="qa-piece-ring"
+                            d="
+                                M 334.35 334.35
+                                A 190 190 0 0 1 65.65 334.35
+                                L 146.97 253.03
+                                A 75 75 0 0 0 253.03 253.03
+                                Z
+                            ">
+                        </path>
+                    </g>
 
-                    <line
-                        class="qa-divider"
-                        x1="334.35"
-                        y1="334.35"
-                        x2="253.03"
-                        y2="253.03">
-                    </line>
-
-                    <line
-                        class="qa-divider"
-                        x1="65.65"
-                        y1="334.35"
-                        x2="146.97"
-                        y2="253.03">
-                    </line>
+                    <!-- Pieza: Colaboración -->
+                    <g class="qa-piece qa-piece-collaboration">
+                        <path
+                            class="qa-piece-ring"
+                            d="
+                                M 65.65 334.35
+                                A 190 190 0 0 1 65.65 65.65
+                                L 146.97 146.97
+                                A 75 75 0 0 0 146.97 253.03
+                                Z
+                            ">
+                        </path>
+                    </g>
 
                     <!-- Círculo central -->
                     <circle
@@ -103,47 +118,73 @@
                         cy="200"
                         r="75">
                     </circle>
+
                     <!-- Zonas interactivas -->
                     <path
                         class="qa-hitarea"
                         data-principle="quality"
-                        d="M 65.65 65.65
-                        A 190 190 0 0 1 334.35 65.65
-                        L 253.03 146.97
-                        A 75 75 0 0 0 146.97 146.97
-                        Z">
+                        d="
+                            M 65.65 65.65
+                            A 190 190 0 0 1 334.35 65.65
+                            L 253.03 146.97
+                            A 75 75 0 0 0 146.97 146.97
+                            Z
+                        ">
                     </path>
 
                     <path
                         class="qa-hitarea"
                         data-principle="automation"
-                        d="M 334.35 65.65
-                        A 190 190 0 0 1 334.35 334.35
-                        L 253.03 253.03
-                        A 75 75 0 0 0 253.03 146.97
-                        Z">
+                        d="
+                            M 334.35 65.65
+                            A 190 190 0 0 1 334.35 334.35
+                            L 253.03 253.03
+                            A 75 75 0 0 0 253.03 146.97
+                            Z
+                        ">
                     </path>
 
                     <path
                         class="qa-hitarea"
                         data-principle="improvement"
-                        d="M 334.35 334.35
-                        A 190 190 0 0 1 65.65 334.35
-                        L 146.97 253.03
-                        A 75 75 0 0 0 253.03 253.03
-                        Z">
+                        d="
+                            M 334.35 334.35
+                            A 190 190 0 0 1 65.65 334.35
+                            L 146.97 253.03
+                            A 75 75 0 0 0 253.03 253.03
+                            Z
+                        ">
                     </path>
 
                     <path
                         class="qa-hitarea"
                         data-principle="collaboration"
-                        d="M 65.65 334.35
-                        A 190 190 0 0 1 65.65 65.65
-                        L 146.97 146.97
-                        A 75 75 0 0 0 146.97 253.03
-                        Z">
+                        d="
+                            M 65.65 334.35
+                            A 190 190 0 0 1 65.65 65.65
+                            L 146.97 146.97
+                            A 75 75 0 0 0 146.97 253.03
+                            Z
+                        ">
                     </path>
+
                 </svg>
+
+                <div class="qa-active-content">
+
+                    <div class="qa-icon" aria-hidden="true">
+                        ✓
+                    </div>
+
+                    <div class="qa-active-title">
+                        Calidad
+                    </div>
+
+                    <p class="qa-active-description">
+                    Construir software confiable desde el inicio.
+                    </p>
+
+                </div>
 
                 <div class="qa-label qa-label-quality">
                     <span>Calidad</span>
@@ -215,7 +256,7 @@
                     </div>
 
                     <a class="project-link"
-                       href="https://github.com/juandavidaf"
+                       href="https://github.com/juandavidaf/qa-project-Urban-Routes-es"
                        target="_blank"
                        rel="noopener noreferrer">
                         Ver en GitHub <span aria-hidden="true">↗</span>
@@ -239,7 +280,7 @@
                     </div>
 
                     <a class="project-link"
-                       href="https://github.com/juandavidaf"
+                       href="https://github.com/juandavidaf/qa-project-Urban-Grocers-app-es"
                        target="_blank"
                        rel="noopener noreferrer">
                         Ver en GitHub <span aria-hidden="true">↗</span>
@@ -263,7 +304,7 @@
                     </div>
 
                     <a class="project-link"
-                       href="https://github.com/juandavidaf"
+                       href="https://github.com/juandavidaf/Urban_Routes_Design_Test"
                        target="_blank"
                        rel="noopener noreferrer">
                         Ver en GitHub <span aria-hidden="true">↗</span>

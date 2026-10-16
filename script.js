@@ -24,7 +24,7 @@ const projectDetails = [
             "Ejecución y validación de pruebas con pytest."
         ],
         tags: ["Python", "Selenium", "pytest", "POM"],
-        github: "https://github.com/juandavidaf"
+        github: "https://github.com/juandavidaf/qa-project-Urban-Routes-es"
     },
     {
         category: "02 / PRUEBAS DE API",
@@ -38,7 +38,7 @@ const projectDetails = [
             "Organización y ejecución de pruebas con Python y pytest."
         ],
         tags: ["Python", "API", "pytest", "HTTP"],
-        github: "https://github.com/juandavidaf"
+        github: "https://github.com/juandavidaf/qa-project-Urban-Grocers-app-es"
     },
     {
         category: "03 / DISEÑO DE PRUEBAS",
@@ -52,7 +52,7 @@ const projectDetails = [
             "Documentación de defectos mediante informes de errores."
         ],
         tags: ["Test Design", "QA", "Equivalence Classes", "Bug Reports"],
-        github: "https://github.com/juandavidaf"
+        github: "https://github.com/juandavidaf/Urban_Routes_Design_Test"
     }
 ];
 
@@ -153,14 +153,69 @@ document.addEventListener("keydown", (event) => {
 });
 
 const hitAreas = document.querySelectorAll(".qa-hitarea");
+const wheel = document.querySelector(".qa-wheel");
+const pieces = document.querySelectorAll(".qa-piece");
+const activeIcon = document.querySelector(".qa-icon");
+const activeTitle = document.querySelector(".qa-active-title");
+const activeDescription = document.querySelector(".qa-active-description");
+
+const principles = {
+    quality: {
+        title: "Calidad",
+        icon: "✓",
+        description: "Construir software confiable desde el inicio."
+    },
+
+    automation: {
+        title: "Automatización",
+        icon: "⚙",
+        description: "Reducir tareas repetitivas mediante pruebas automatizadas."
+    },
+
+    improvement: {
+        title: "Mejora continua",
+        icon: "↗",
+        description: "Aprender de cada prueba para mejorar el proceso."
+    },
+
+    collaboration: {
+        title: "Colaboración",
+        icon: "◎",
+        description: "Trabajar en equipo para prevenir y detectar problemas."
+    }
+};;
 
 hitAreas.forEach((area) => {
 
     area.addEventListener("mouseenter", () => {
 
         const principle = area.dataset.principle;
+        const data = principles[principle];
 
-        console.log(principle);
+        activeIcon.textContent = data.icon;
+        activeTitle.textContent = data.title;
+        activeDescription.textContent = data.description;
+
+        pieces.forEach((piece) => {
+        piece.classList.remove("is-selected");
+        });
+
+        const selectedPiece = document.querySelector(
+            `.qa-piece-${principle}`
+        );
+
+        selectedPiece.classList.add("is-selected");
+
+        wheel.classList.add("is-active");
+    });
+
+    area.addEventListener("mouseleave", () => {
+
+        wheel.classList.remove("is-active");
+
+        pieces.forEach((piece) => {
+            piece.classList.remove("is-selected");
+        });
 
     });
 
