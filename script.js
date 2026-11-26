@@ -17,12 +17,41 @@ const projectDetails = [
         title: "Pruebas web con Selenium",
         description:
             "Automatización de interacciones con una aplicación web mediante Python y Selenium WebDriver.",
-        details: [
-            "Implementación del patrón Page Object Model (POM).",
-            "Localización de elementos mediante XPath y otros selectores.",
-            "Uso de esperas explícitas para sincronizar las interacciones.",
-            "Ejecución y validación de pruebas con pytest."
+        
+        skills: [
+        "Automatización de pruebas web.",
+        "Implementación del patrón Page Object Model (POM).",
+        "Localización de elementos mediante XPath y CSS.",
+        "Uso de esperas explícitas.",
+        "Diseño y ejecución de pruebas con pytest."
         ],
+
+        application: "Urban Routes — aplicación web para configurar rutas y solicitar servicios de taxi.",
+         
+        tests: [
+        "Configuración de direcciones de origen y destino.",
+        "Selección de la tarifa Comfort.",
+        "Introducción y validación del número telefónico.",
+        "Interacción con los elementos del formulario de solicitud, como agregar una tarjeta de crédito, detalles del viaje y realizar el pedido."
+        ],
+
+        results: [
+        "Se logró automatizar los flujos de interacción definidos.",
+        "Pudieron validarse los elementos de la interfaz mediante aserciones.",
+        "Se ejecutaron las pruebas automatizadas con pytest."
+        ],
+
+        evidence: [
+                {
+                        src: "images/automated_code.png",
+                        alt: "Código de una prueba automatizada"
+                    },
+                    {
+                        src: "images/test_execution.png",
+                        alt: "Ejecución de una prueba"
+                    }
+        ],
+
         tags: ["Python", "Selenium", "pytest", "POM"],
         github: "https://github.com/juandavidaf/qa-project-Urban-Routes-es"
     },
@@ -31,12 +60,39 @@ const projectDetails = [
         title: "Validación de servicios API",
         description:
             "Pruebas automatizadas para verificar las respuestas de servicios API y el comportamiento de sus endpoints.",
-        details: [
-            "Validación de códigos de estado HTTP.",
-            "Comprobación de datos y estructura de las respuestas.",
-            "Pruebas con solicitudes válidas e inválidas.",
-            "Organización y ejecución de pruebas con Python y pytest."
+        
+        skills: [
+        "Validación de códigos de estado HTTP.",
+        "Comprobación de datos y estructura de las respuestas.",
+        "Pruebas con solicitudes válidas e inválidas.",
+        "Organización y ejecución de pruebas con Python y pytest."
         ],
+
+        application: "Urban Grocers — aplicación de entrega de productos por catálogo y kits preparados.",
+         
+        tests: [
+        "Creación de un kit para el usuario o usuaria.",
+        "Diseño de lista de comprobación de las restricciones en el campo 'name' al crear el kit.",
+        "Ejecución de las pruebas individuales de la lista de comprobación."
+        ],
+
+        results: [
+        "Automatización de las solicitudes de creación de kits.",
+        "Comprobación de los límites establecidos para el campo.",
+        "Ejecución de pruebas automatizadas con pytest."
+        ],
+
+        evidence: [
+        {
+                        src: "images/grocers_code.png",
+                        alt: "Código de una prueba automatizada"
+                    },
+                    {
+                        src: "images/pytest_grocers.png",
+                        alt: "Ejecución de una prueba"
+                    }
+        ],
+
         tags: ["Python", "API", "pytest", "HTTP"],
         github: "https://github.com/juandavidaf/qa-project-Urban-Grocers-app-es"
     },
@@ -45,14 +101,38 @@ const projectDetails = [
         title: "Análisis y diseño de casos",
         description:
             "Diseño de pruebas a partir de requisitos para identificar escenarios relevantes y posibles defectos.",
-        details: [
-            "Descomposición de requisitos en condiciones verificables.",
-            "Aplicación de particiones de equivalencia y valores límite.",
-            "Diseño de escenarios y listas de comprobación.",
-            "Documentación de defectos mediante informes de errores."
+        
+        skills: [
+        "Análisis de requisitos",
+        "Creación de una lista de comprobación.",
+        "Prueba de app móvil en emulador con Android Studio",
+        "Comparación exhaustiva con diseño en Figma.",
+        "Elaboración de informe de errores"
         ],
-        tags: ["Test Design", "QA", "Equivalence Classes", "Bug Reports"],
-        github: "https://github.com/juandavidaf/Urban_Routes_Design_Test"
+
+        application: "Urban Lunch — aplicación móvil para personalizar comidas de negocios de diferentes restaurantes de la ciudad",
+         
+        tests: [
+        "Selección del punto de recogida.",
+        "Selección de platillos de la lista.",
+        "Confirmación del pedido."
+        ],
+
+        results: [
+        "Ejecución de la aplicación móvil en emulador de Android Studio.",
+        "Comparación de diseños establecidos en Figma.",
+        "Reporte de diferencias encontradas en informes de errores."
+        ],
+
+        evidence: [
+                {
+                src: "images/emulator_lunch.png",
+                alt: "Emulador"
+            }
+        ],
+        
+        tags: ["Test Design", "QA", "Android Studio", "Figma", "Bug Reports"],
+        github: "https://github.com/juandavidaf/qa-project-UrbanLunch"
     }
 ];
 
@@ -64,16 +144,36 @@ function openProjectModal(index) {
     modalDescription.textContent = project.description;
     modalGithub.href = project.github;
 
-    // Crear la lista de detalles
-    modalDetails.replaceChildren();
+    // Habilidades trabajadas
+    const modalSkills = document.getElementById("modal-skills");
+    modalSkills.replaceChildren();
 
-    project.details.forEach((detail) => {
+    project.skills.forEach((skill) => {
         const item = document.createElement("li");
-        item.textContent = detail;
-        modalDetails.appendChild(item);
+        item.textContent = skill;
+        modalSkills.appendChild(item);
     });
 
-    // Crear las etiquetas de tecnologías
+    // Aplicación
+    document.getElementById("modal-application").textContent =
+        project.application;
+
+    // Pruebas realizadas y resultados
+    function populateList(elementId, items) {
+        const list = document.getElementById(elementId);
+        list.replaceChildren();
+
+        items.forEach((itemText) => {
+            const item = document.createElement("li");
+            item.textContent = itemText;
+            list.appendChild(item);
+        });
+    }
+
+    populateList("modal-tests", project.tests);
+    populateList("modal-results", project.results);
+
+    // Etiquetas
     modalTags.replaceChildren();
 
     project.tags.forEach((tag) => {
@@ -82,11 +182,25 @@ function openProjectModal(index) {
         modalTags.appendChild(span);
     });
 
+    // Evidencias
+    const modalEvidence = document.getElementById("modal-evidence");
+    modalEvidence.replaceChildren();
+
+    project.evidence.forEach((evidence) => {
+        const img = document.createElement("img");
+        img.src = evidence.src;
+        img.alt = evidence.alt;
+        img.loading = "lazy";
+
+        modalEvidence.appendChild(img);
+    });
+
     projectModal.classList.add("is-open");
     projectModal.setAttribute("aria-hidden", "false");
     document.body.style.overflow = "hidden";
 
     modalClose.focus();
+
 }
 
 function closeProjectModal() {
